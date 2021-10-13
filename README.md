@@ -87,6 +87,12 @@ All endpoints here
     
   - DELETE `/flush` removes all cache entries
     
+
+# Docker
+
+- Create docker image `docker build -t cachy-api --squash .` 
+- Create/Run a docker container `docker run -d --rm -p 8080:8080 --name cachy-api-1 cachy-api` 
+  
 # TODO
 
 - [x] Design Patters
@@ -96,5 +102,5 @@ All endpoints here
 - [ ] Web UI
 - [x] Tests
 - [x] Logging for Http Requests that are incoming in `server.log` file
-- [ ] Docker Support
+- [x] Docker Support
 - [ ] Deploy (Heroku, aws)
