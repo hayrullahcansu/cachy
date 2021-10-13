@@ -20,7 +20,7 @@ func main() {
 	logging.Infof("Starting service for %s", *name)
 	// setup signal catching
 	sigs := make(chan os.Signal, 1)
-	// catch all signals since not explicitly listing
+	// catch all signals since not explicitly listinggo
 	signal.Notify(sigs)
 	signal.Notify(sigs, syscall.SIGQUIT)
 	// method invoked upon seeing signal

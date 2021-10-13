@@ -21,7 +21,8 @@ func CacheRouteHandler(w http.ResponseWriter, r *http.Request) {
 	reg := regexp.MustCompile(pattern)
 	url := r.URL.Path[1:]
 	queries := r.URL.Query()
-
+	requestPayload := utility.FormatRequest(r)
+	logging.Serverf(requestPayload)
 	logging.Infof("Cache Controller , %s!", url)
 	logging.Infof("Cache Controller queries, %v!", queries)
 	if regexGroup := reg.FindStringSubmatch(url); regexGroup != nil {

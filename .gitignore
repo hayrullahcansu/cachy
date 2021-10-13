@@ -15,5 +15,5 @@
 # vendor/
 
 *logs.txt
-
+*server.log
 __debug*

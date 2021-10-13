@@ -95,6 +95,6 @@ All endpoints here
 - [x] ApiDoc
 - [ ] Web UI
 - [x] Tests
-- [ ] Logging for Http Requests that are incoming
+- [x] Logging for Http Requests that are incoming in `server.log` file
 - [ ] Docker Support
 - [ ] Deploy (Heroku, aws)

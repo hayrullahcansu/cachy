@@ -20,12 +20,18 @@ func initialLogger() {
 		log.Fatal(err)
 	}
 
+	serverLogFile, err := os.OpenFile("server.log", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0666)
+	if err != nil {
+		log.Fatal(err)
+	}
+
 	multiWriter := io.MultiWriter(os.Stdout, file)
 
 	_instance = &Logger{
 		WarningLogger: log.New(multiWriter, "WARNING: ", log.Ldate|log.Ltime|log.Lshortfile),
 		InfoLogger:    log.New(multiWriter, "INFO: ", log.Ldate|log.Ltime|log.Lshortfile),
 		ErrorLogger:   log.New(multiWriter, "ERROR: ", log.Ldate|log.Ltime|log.Lshortfile),
+		ServerLogger:  log.New(serverLogFile, "SERVER: ", log.Ldate|log.Ltime|log.Lshortfile),
 	}
 }
 
@@ -51,6 +57,10 @@ func Fatal(args ...interface{}) {
 	os.Exit(-1)
 }
 
+func Server(args ...interface{}) {
+	Instance().ServerLogger.Println(args...)
+}
+
 func Infof(format string, args ...interface{}) {
 	Instance().InfoLogger.Printf(format, args...)
 }
@@ -66,4 +76,7 @@ func Errorf(format string, args ...interface{}) {
 func Fatalf(format string, args ...interface{}) {
 	Instance().ErrorLogger.Printf(format, args...)
 	os.Exit(-1)
+}
+func Serverf(format string, args ...interface{}) {
+	Instance().ServerLogger.Printf(format, args...)
 }
