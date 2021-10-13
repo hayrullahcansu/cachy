@@ -55,6 +55,10 @@ func (c *CacheController) DeleteItem(key string) {
 	itemView := view.NewCacheItemView(item.Key, item.Value, item.Dead)
 	c.OkWithBody(*itemView)
 }
+func (c *CacheController) Flush() {
+	c.cacheService.FlushEntries()
+	c.Ok()
+}
 func (c *CacheController) ListItems() {
 	entities := c.cacheService.GetCacheEntries()
 	var itemViewList []*view.CacheItemView

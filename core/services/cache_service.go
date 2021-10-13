@@ -39,7 +39,7 @@ func (s *CacheService) SetCacheEntry(key string, data interface{}, dead int64) *
 func (s *CacheService) DeleteCacheEntry(key string) *caching.CacheItem {
 	return caching.Instance().Delete(key)
 }
-func (s *CacheService) FlushEntries(key string) {
+func (s *CacheService) FlushEntries() {
 	caching.Instance().Flush()
 }
 

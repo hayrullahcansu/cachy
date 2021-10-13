@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"regexp"
 	"strconv"
+	"strings"
 
 	"github.com/hayrullahcansu/cachy/api/controller"
 	"github.com/hayrullahcansu/cachy/data/request"
@@ -75,7 +76,11 @@ func CacheRouteHandler(w http.ResponseWriter, r *http.Request) {
 				return
 			//Check DELETE & Delete
 			case "DELETE":
-				controller.DeleteItem(key)
+				if strings.Contains(url, "cache/flush") {
+					controller.Flush()
+				} else {
+					controller.DeleteItem(key)
+				}
 				return
 			default:
 			}
