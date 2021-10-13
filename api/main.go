@@ -7,7 +7,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/hayrullahcansu/cachy/api"
+	"github.com/hayrullahcansu/cachy/api/listener"
 	"github.com/hayrullahcansu/cachy/data/constants"
 	"github.com/hayrullahcansu/cachy/framework/logging"
 )
@@ -32,7 +32,7 @@ func main() {
 		os.Exit(1)
 	}()
 
-	apiListener := api.NewApiListener()
+	apiListener := listener.NewApiListener()
 	apiListener.ListenAndServe()
 
 	// man.InitSystem()
