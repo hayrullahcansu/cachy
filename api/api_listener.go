@@ -9,18 +9,18 @@ import (
 	"github.com/hayrullahcansu/cachy/framework/logging"
 )
 
-type ApiWorker struct {
+type ApiListener struct {
 	mux *http.ServeMux
 }
 
-// NewApiWorker return new instance of ApiWorker
-func NewApiWorker() *ApiWorker {
-	return &ApiWorker{
+// NewApiListener return new instance of ApiWorker
+func NewApiListener() *ApiListener {
+	return &ApiListener{
 		mux: http.NewServeMux(),
 	}
 }
 
-func (a *ApiWorker) ListenAndServce() {
+func (a *ApiListener) ListenAndServe() {
 
 	a.mux.HandleFunc("/", TestServer)
 	// a.mux.HandleFunc("/api/v1/hello", HelloServer)

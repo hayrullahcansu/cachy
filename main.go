@@ -32,8 +32,8 @@ func main() {
 		os.Exit(1)
 	}()
 
-	apiWorker := api.NewApiWorker()
-	apiWorker.ListenAndServce()
+	apiListener := api.NewApiListener()
+	apiListener.ListenAndServe()
 
 	// man.InitSystem()
 

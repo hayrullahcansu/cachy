@@ -83,13 +83,13 @@ func (c *Cache) Flush() {
 	defer c.lock.Unlock()
 	c.flush()
 }
-func (c *Cache) List() []*CacheItem {
+func (c *Cache) List() []CacheItem {
 	c.lock.Lock()
 	defer c.lock.Unlock()
 
-	arrayOfItems := make([]*CacheItem, 0, len(c.items))
+	arrayOfItems := make([]CacheItem, 0, len(c.items))
 	for _, val := range c.items {
-		arrayOfItems = append(arrayOfItems, &val)
+		arrayOfItems = append(arrayOfItems, val)
 	}
 	return arrayOfItems
 }

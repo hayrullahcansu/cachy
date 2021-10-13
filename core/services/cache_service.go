@@ -20,9 +20,9 @@ func (s *CacheService) GetCacheEntry(key string) *caching.CacheItem {
 		return nil
 	}
 }
-func (s *CacheService) GetCacheEntries() []*caching.CacheItem {
+func (s *CacheService) GetCacheEntries() []caching.CacheItem {
 	items := caching.Instance().List()
-	var result []*caching.CacheItem = make([]*caching.CacheItem, 0, len(items))
+	var result []caching.CacheItem = make([]caching.CacheItem, 0, len(items))
 	if items != nil {
 		result = append(result, items...)
 	}
