@@ -2,9 +2,6 @@ package main
 
 import (
 	"flag"
-	"os"
-	"os/signal"
-	"syscall"
 	"time"
 
 	"github.com/hayrullahcansu/cachy/api/listener"
@@ -19,18 +16,18 @@ func main() {
 	flag.Parse()
 	logging.Infof("Starting service for %s", *name)
 	// setup signal catching
-	sigs := make(chan os.Signal, 1)
-	// catch all signals since not explicitly listinggo
-	signal.Notify(sigs)
-	signal.Notify(sigs, syscall.SIGQUIT)
-	// method invoked upon seeing signal
+	// sigs := make(chan os.Signal, 1)
+	// // catch all signals since not explicitly listinggo
+	// signal.Notify(sigs)
+	// signal.Notify(sigs, syscall.SIGQUIT)
+	// // method invoked upon seeing signal
 
-	go func() {
-		s := <-sigs
-		logging.Infof("RECEIVED SIGNAL: %s", s)
-		AppCleanup()
-		os.Exit(1)
-	}()
+	// go func() {
+	// 	s := <-sigs
+	// 	logging.Infof("RECEIVED SIGNAL: %s", s)
+	// 	AppCleanup()
+	// 	os.Exit(1)
+	// }()
 
 	apiListener := listener.NewApiListener()
 	apiListener.ListenAndServe()
