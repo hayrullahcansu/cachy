@@ -36,7 +36,12 @@ linux    ->  "/tmp/TIMESTAMP-data.json"
 windows  ->  "TIMESTAMP-data.json"
 ```
 
-# Rest API
+# Test API 
+
+Hosted in heroku.
+
+`https://cachy-api.herokuapp.com/api/v1`
+# Rest API Document
 
 All endpoints here
 - Cache Resource `/api/v1/cache`
@@ -103,4 +108,4 @@ All endpoints here
 - [x] Tests
 - [x] Logging for Http Requests that are incoming in `server.log` file
 - [x] Docker Support
-- [ ] Deploy (Heroku, aws)
+- [x] Deploy (Heroku, aws)
