@@ -2,10 +2,11 @@ package listener
 
 import (
 	"fmt"
+	"log"
 	"net/http"
+	"os"
 
 	"github.com/hayrullahcansu/cachy/api/routing"
-	"github.com/hayrullahcansu/cachy/data/constants"
 	"github.com/hayrullahcansu/cachy/framework/logging"
 )
 
@@ -25,7 +26,14 @@ func (a *ApiListener) ListenAndServe() {
 	a.mux.HandleFunc("/", TestServer)
 	// a.mux.HandleFunc("/api/v1/hello", HelloServer)
 	a.mux.HandleFunc("/api/v1/cache/", routing.CacheRouteHandler)
-	uri := fmt.Sprintf(":%d", constants.ListenPort)
+	// [START setting_port]
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+		log.Printf("Defaulting to port %s", port)
+	}
+	log.Printf("Listening on port %s", port)
+	uri := ":" + port
 	http.ListenAndServe(uri, a.mux)
 }
 

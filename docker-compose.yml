@@ -1,0 +1,20 @@
+services:
+  cachy:
+    container_name: cachy-api
+    # deploy:
+    #   replicas: 2
+    #   restart_policy:
+    #     condition: on-failure
+    #     delay: 5s
+    #     max_attempts: 3
+    #     window: 120s
+    #   update_config:
+    #     parallelism: 2
+    hostname: cachy-api
+    restart: on-failure:3
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+    - 8080:8080
+version: '3'
