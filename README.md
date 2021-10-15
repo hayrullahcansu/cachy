@@ -75,7 +75,7 @@ windows  ->  "TIMESTAMP-data.json"
 ```
 git clone https://github.com/hayrullahcansu/cachy.git
 ```
-Go to project cachy path
+Go to project folder
 ```
 cd cachy
 ```
