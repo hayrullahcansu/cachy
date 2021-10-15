@@ -13,9 +13,8 @@
     - [default values for backup_file_path](#default-values-for-backup_file_path)
   - [Run on Local](#run-on-local)
     - [Step 1: git clone this repository hayrullahcansu/cachy@github](#step-1-git-clone-this-repository-hayrullahcansucachygithub)
-    - [Step 2: init go environment](#step-2-init-go-environment)
-    - [Step 3: download dependencies](#step-3-download-dependencies)
-    - [Step 4: run test](#step-4-run-test)
+    - [Step 2: download dependencies](#step-2-download-dependencies)
+    - [Step 3: run test](#step-3-run-test)
     - [Step 4: run cachy (It will start to listen on 8080 default port) [env key: PORT]](#step-4-run-cachy-it-will-start-to-listen-on-8080-default-port-env-key-port)
   - [Test API](#test-api)
   - [Rest API Document](#rest-api-document)
@@ -76,16 +75,15 @@ windows  ->  "TIMESTAMP-data.json"
 ```
 git clone https://github.com/hayrullahcansu/cachy.git
 ```
-
-### Step 2: init go environment
+Go to project cachy path
 ```
-go mod init github.com/hayrullahcansu/cachy
+cd cachy
 ```
-### Step 3: download dependencies
+### Step 2: download dependencies
 ```
 go mod download
 ```
-### Step 4: run test
+### Step 3: run test
 ```
 go test -v ./... 
 ```
