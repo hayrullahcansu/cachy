@@ -168,7 +168,6 @@ All endpoints here
 - [x] Readme File
 - [ ] Go Doc
 - [x] ApiDoc
-- [ ] Web UI
 - [x] Tests
 - [x] Logging for Http Requests that are incoming in `server.log` file
 - [x] Docker Support
