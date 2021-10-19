@@ -60,8 +60,8 @@ To be avoided from circular reference error, we have to obtain these rules.
 
 | Param Name | Variable Type | Requirement | Description                         | Value                                                                             |
 |------------|---------------|-------------|-------------------------------------|-------------------------------------------------------------------------------------|
-| backup_file_path       | `:string`     |    no`*`   | Path for backing up                       |   Described below  |
-| backup_interval      | `:string`     |    no`*`   | Interval for backing up         |  `10`, `30`, `60` ... by any seconds  |
+| backup_file_path       | `:string`     |    no   | Path for backing up                       |   Described below  |
+| backup_interval      | `:string`     |    no   | Interval for backing up         |  `10`, `30`, `60` ... by any seconds  |
 
 ### default values for backup_file_path
 ```
