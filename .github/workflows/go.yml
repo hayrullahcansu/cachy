@@ -27,4 +27,4 @@ jobs:
       run: |
         git pull
         export latest="$(git describe --tags `git rev-list --tags --max-count=1`)"
-        curl https://proxy.golang.org/github.com/hayrullahcansu/cachy/@v/$latest.info
+        curl "https://proxy.golang.org/github.com/hayrullahcansu/cachy/@v/$latest.info"
