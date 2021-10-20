@@ -1,0 +1,30 @@
+name: Go
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: 1.17
+
+    - name: Build
+      run: go build -v ./...
+
+    - name: Test
+      run: go test -v ./...
+    - name: Publish doc to go.dev packages
+      run: |
+        git pull
+        export latest="$(git describe --tags `git rev-list --tags --max-count=1`)"
+        curl https://proxy.golang.org/github.com/hayrullahcansu/cachy/@v/$latest.info
