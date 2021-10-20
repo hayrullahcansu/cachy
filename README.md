@@ -26,7 +26,7 @@
 
 ## Description
 
-Cachy is a lightweight in-memory cache api.
+Cachy is a lightweight in-memory cache api. [Godoc](https://godoc.org/github.com/hayrullahcansu/cachy)
 
 ## Features
 
@@ -164,7 +164,7 @@ All endpoints here
 
 - [x] Design Patters
 - [x] Readme File
-- [ ] Go Doc
+- [x] Go Doc
 - [x] ApiDoc
 - [x] Tests
 - [x] Logging for Http Requests that are incoming in `server.log` file
